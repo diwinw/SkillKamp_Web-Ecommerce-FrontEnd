@@ -12,7 +12,7 @@ const TabPage = () => {
       <Tabs
         defaultActiveKey="home"
         id="uncontrolled-tab-example"
-        className="mb-3"
+        className="mb-3  justify-content-center"
       >
         <Tab eventKey="home" title="Home">
           <HomePage />
@@ -23,13 +23,23 @@ const TabPage = () => {
         <Tab eventKey="story" title="Our Story">
           <StoryPage />
         </Tab>
-
-        <Tab eventKey="login" title="Login">
-          <FontAwesomeIcon icon={faUser} />
-        </Tab>
-        <Tab eventKey="cart" title="Cart">
-          <FontAwesomeIcon icon={faCartShopping} />
-        </Tab>
+        <Tab eventKey="contract" title="Contract"></Tab>
+        <Tab
+          eventKey="cart"
+          title={
+            <span>
+              <FontAwesomeIcon icon={faUser} /> Login
+            </span>
+          }
+        ></Tab>
+        <Tab
+          eventKey="cart"
+          title={
+            <span>
+              <FontAwesomeIcon icon={faCartShopping} /> 0
+            </span>
+          }
+        ></Tab>
       </Tabs>
     </>
   );

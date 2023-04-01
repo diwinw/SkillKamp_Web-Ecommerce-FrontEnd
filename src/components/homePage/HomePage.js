@@ -3,7 +3,7 @@ import Carousel from "react-bootstrap/Carousel";
 import Banner1 from "../../image/homePage/Banner1.png";
 import Banner2 from "../../image/homePage/Banner2.png";
 import Banner3 from "../../image/homePage/Banner3.png";
-import Banner4 from "../../image/homePage/Banner4.png";
+import Product from "../product/Product";
 const HomePage = () => {
   return (
     <div>
@@ -32,6 +32,11 @@ const HomePage = () => {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
+
+      <Product />
+      <Product />
+      <Product />
+      <Product />
     </div>
   );
 };
