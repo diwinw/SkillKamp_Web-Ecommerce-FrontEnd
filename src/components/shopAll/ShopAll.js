@@ -54,21 +54,25 @@ const ShopAll = () => {
                 Filter
               </button>
               <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="#">
-                    All
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">
-                    T-shirts
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">
-                    Bodysuits
-                  </a>
-                </li>
+                <button
+                  className="text-center btn btn-light"
+                  style={{ width: "100%" }}
+                >
+                  All
+                </button>
+                <button
+                  className="text-center btn btn-light"
+                  style={{ width: "100%" }}
+                >
+                  T-shirts
+                </button>
+                <button
+                  className="text-center btn btn-light"
+                  style={{ width: "100%" }}
+                >
+                  {" "}
+                  Bodysuits
+                </button>
               </ul>
             </div>
           </div>
