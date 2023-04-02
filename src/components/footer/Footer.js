@@ -102,7 +102,7 @@ const Footer = () => {
 
         <div className="row">
           <div className="col-md-12 text-center">
-            <p> &copy; 2035 by happy kids</p>
+            <p> &copy; 2023 by happy kids</p>
           </div>
         </div>
       </div>

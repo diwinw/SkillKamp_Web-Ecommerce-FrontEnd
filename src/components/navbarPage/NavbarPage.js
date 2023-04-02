@@ -1,11 +1,17 @@
 import React from "react";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./NavbarPage.css";
+
 const NavbarPage = () => {
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
-        <h1 className="text-dark">Happy kids</h1>
+      <nav className="navbar navbar-expand-lg justify-content-center header-area font-heading2">
+        <div id="headerLink" className="header-link">
+          <a className="color-neutral11" href="/">
+            Happy kids
+          </a>
+        </div>
       </nav>
     </>
   );

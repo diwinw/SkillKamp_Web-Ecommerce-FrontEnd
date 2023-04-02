@@ -36,3 +36,240 @@
     transform: rotate(360deg);
   }
 }
+
+@font-face {
+  font-family: "Brandon-Grot-W01-Light";
+  src: url("//static.parastorage.com/services/third-party/fonts/user-site-fonts/fonts/e00ba30a-0bf3-4c76-9392-8641fa237a92.eot?#iefix");
+  src: url("//static.parastorage.com/services/third-party/fonts/user-site-fonts/fonts/e00ba30a-0bf3-4c76-9392-8641fa237a92.eot?#iefix")
+      format("eot"),
+    url("//static.parastorage.com/services/third-party/fonts/user-site-fonts/fonts/69b40392-453a-438a-a121-a49e5fbc9213.woff2")
+      format("woff2"),
+    url("//static.parastorage.com/services/third-party/fonts/user-site-fonts/fonts/9362bca5-b362-4543-a051-2129e2def911.woff")
+      format("woff"),
+    url("//static.parastorage.com/services/third-party/fonts/user-site-fonts/fonts/85060878-ca6c-43cc-ac31-7edccfdca71b.ttf")
+      format("truetype"),
+    url("//static.parastorage.com/services/third-party/fonts/user-site-fonts/fonts/47f089a6-c8ce-46fa-b98f-03b8c0619d8a.svg#47f089a6-c8ce-46fa-b98f-03b8c0619d8a")
+      format("svg");
+  font-display: block;
+}
+@font-face {
+  font-family: "Brandon-Grot-W05-Light";
+  src: url("//static.parastorage.com/services/santa-resources/resources/viewer/user-site-fonts/fonts/BrandonGrot/v1/BrandonGrotesqueCondW05-Lt.woff2")
+      format("woff2"),
+    url("//static.parastorage.com/services/santa-resources/resources/viewer/user-site-fonts/fonts/BrandonGrot/v1/BrandonGrotesqueCondW05-Lt.woff")
+      format("woff");
+  font-display: block;
+}
+
+@media (min-width: 769px) {
+  .font-heading1 {
+    font-family: brandon-grot-w01-light, brandon-grot-w05-light, sans-serif;
+    font-weight: bold;
+    font-size: 66px;
+  }
+  .font-heading2 {
+    font-family: brandon-grot-w01-light, brandon-grot-w05-light, sans-serif;
+    font-weight: bold;
+    font-size: 59px;
+  }
+  .font-heading3 {
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+  }
+  .font-heading4 {
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: bold;
+    font-size: 32px;
+  }
+  .font-heading5 {
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+  }
+  .font-heading6 {
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+  }
+  .font-body1 {
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+  }
+  .font-body2 {
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+  }
+  .font-body3 {
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: normal;
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .font-heading1 {
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: bold;
+    font-size: 48px;
+  }
+  .font-heading2 {
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: bold;
+    font-size: 32px;
+  }
+  .font-heading3 {
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+  }
+  .font-heading4 {
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .font-heading5 {
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .font-body1 {
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+  }
+  .font-body2 {
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .font-heading1 {
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+  }
+  .font-heading2 {
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .font-heading3 {
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .font-heading4 {
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .font-heading5 {
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  .font-body1 {
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+  }
+  .font-body2 {
+    font-family: brandon-grot-w01-light, brandon-grot-w05-light, sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+  }
+}
+
+.font-btn-large {
+  font-family: brandon-grotesque, sans-serif;
+  font-weight: normal;
+  font-size: 20px;
+}
+.font-btn-medium {
+  font-family: brandon-grotesque, sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+}
+.font-btn-small {
+  font-family: brandon-grotesque, sans-serif;
+  font-weight: normal;
+  font-size: 15px;
+}
+.font-field-placeholder {
+  font-family: brandon-grotesque, sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+}
+.font-field-title {
+  font-family: brandon-grotesque, sans-serif;
+  font-weight: normal;
+  font-size: 12px;
+}
+.font-field-description {
+  font-family: brandon-grotesque, sans-serif;
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.color-primary1 {
+  color: #282828;
+}
+.color-primary2 {
+  color: #ffffff;
+}
+.color-primary3 {
+  color: #d2461c;
+}
+.color-primary4 {
+  color: #afafaf;
+}
+.color-primary5 {
+  color: #afafaf; /*wrong code from figma*/
+}
+.color-neutral1 {
+  color: #f8f9fa;
+}
+.color-neutral2 {
+  color: #e9ecef;
+}
+.color-neutral3 {
+  color: #dee2e6;
+}
+.color-neutral4 {
+  color: #ced4da;
+}
+.color-neutral5 {
+  color: #adb5bd;
+}
+.color-neutral6 {
+  color: #6c757d;
+}
+.color-neutral7 {
+  color: #495057;
+}
+.color-neutral8 {
+  color: #343a40;
+}
+.color-neutral9 {
+  color: #212529;
+}
+.color-neutral10 {
+  color: #ffffff;
+}
+.color-neutral11 {
+  color: #000000;
+}
+.color-status1 {
+  color: #cdecde;
+}
+.color-status2 {
+  color: #e8e9eb;
+}
+.color-status3 {
+  color: #e8e9eb; /*wrong code from figma*/
+}

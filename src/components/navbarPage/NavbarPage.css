@@ -1,0 +1,12 @@
+.header-area {
+  background-color: white;
+  padding: 2%;
+}
+.header-link a {
+  text-decoration: none;
+  cursor: pointer;
+  letter-spacing: 0.2em;
+}
+.header-link a:hover {
+  color: black;
+}
