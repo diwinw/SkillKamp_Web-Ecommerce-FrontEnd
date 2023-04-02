@@ -1,5 +1,7 @@
 import React from "react";
-
+import FacebookImg from "../../image/footer/fb.png";
+import IgImg from "../../image/footer/ig.png";
+import TKImg from "../../image/footer/tk.png";
 const Footer = () => {
   return (
     <div className="footer">
@@ -25,7 +27,7 @@ const Footer = () => {
           </div>
           <div className="col-md-4 text-center">
             <img
-              src="/facebook.png"
+              src={FacebookImg}
               width="30"
               height="30"
               className="d-inline-block align-top"
@@ -33,14 +35,15 @@ const Footer = () => {
               alt="React Bootstrap logo"
             />
             <img
-              src="/pinterest.png"
+              src={IgImg}
               width="30"
               height="30"
               className="d-inline-block align-top"
+              style={{ marginLeft: 30 }}
               alt="React Bootstrap logo"
             />
             <img
-              src="/instagram.png"
+              src={TKImg}
               width="30"
               height="30"
               className="d-inline-block align-top"

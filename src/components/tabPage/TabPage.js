@@ -12,22 +12,37 @@ const TabPage = () => {
       <Tabs
         defaultActiveKey="home"
         id="uncontrolled-tab-example"
-        className="mb-3  justify-content-center"
+        className="mb-3  justify-content-center .text-dark"
       >
-        <Tab eventKey="home" title="Home">
+        <Tab
+          eventKey="home"
+          title={<span style={{ color: "black" }}>Home</span>}
+        >
           <HomePage />
         </Tab>
-        <Tab eventKey="shop" title="Shop Collection">
+        <Tab
+          eventKey="shop"
+          title={<span style={{ color: "black" }}>Shop Collection</span>}
+        >
           test2
         </Tab>
-        <Tab eventKey="story" title="Our Story">
+        <Tab
+          eventKey="story"
+          title={<span style={{ color: "black" }}>Our Story</span>}
+        >
           <StoryPage />
         </Tab>
-        <Tab eventKey="contract" title="Contract"></Tab>
+        <Tab
+          eventKey="contract"
+          title={<span style={{ color: "black" }}>Contract</span>}
+        >
+          Contact Us
+        </Tab>
+
         <Tab
           eventKey="cart"
           title={
-            <span>
+            <span style={{ color: "black" }}>
               <FontAwesomeIcon icon={faUser} /> Login
             </span>
           }
@@ -35,7 +50,7 @@ const TabPage = () => {
         <Tab
           eventKey="cart"
           title={
-            <span>
+            <span style={{ color: "black" }}>
               <FontAwesomeIcon icon={faCartShopping} /> 0
             </span>
           }
