@@ -16,28 +16,32 @@ const Product = () => {
 
   return (
     <>
-      <Card style={{ width: "18rem" }} className="text-center">
-        <Card.Img
-          variant="top"
-          src={products.image}
-          style={{ width: "300px", height: "300px" }}
-          className="mx-auto my-3"
-        />
+      {/* <Link to={`/products/${products.id}`}> */}
 
-        <Card.Body>
-          <Card.ImgOverlay className="d-flex align-items-center ">
-            <button
-              variant="primary"
-              className="w-100 tn btn btn-light text-secondary opacity-50"
-              onClick={handleClick}
-            >
-              <QuickView product={products} show={isOpen} onHide={false} />
-              Quick View
-            </button>
-          </Card.ImgOverlay>
-          <Card.Title>{products.name}</Card.Title>
-          <Card.Text>{products.price}</Card.Text>
-        </Card.Body>
+      <Card style={{ width: "18rem" }} className="text-center">
+        <a href={`/products`}>
+          <Card.Img
+            variant="top"
+            src={products.image}
+            style={{ width: "300px", height: "300px" }}
+            className="mx-auto my-3"
+          />
+
+          <Card.Body>
+            <Card.ImgOverlay className="d-flex align-items-center ">
+              <button
+                variant="primary"
+                className="w-100 tn btn btn-light text-secondary opacity-50"
+                onClick={handleClick}
+              >
+                <QuickView product={products} show={isOpen} onHide={false} />
+                Quick View
+              </button>
+            </Card.ImgOverlay>
+            <Card.Title>{products.name}</Card.Title>
+            <Card.Text>{products.price}</Card.Text>
+          </Card.Body>
+        </a>
         <button style={{ width: "100%" }} className=" btn  btn-outline-dark">
           View Detail
         </button>
