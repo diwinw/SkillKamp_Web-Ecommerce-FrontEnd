@@ -1,11 +1,11 @@
 import React from "react";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
-// import { Container, Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import HomePage from "../homePage/HomePage";
 import StoryPage from "../storyPage/StoryPage";
+import ShopAll from "../shopAll/ShopAll";
 const TabPage = () => {
   return (
     <>
@@ -24,7 +24,7 @@ const TabPage = () => {
           eventKey="shop"
           title={<span style={{ color: "black" }}>Shop Collection</span>}
         >
-          test2
+          <ShopAll />
         </Tab>
         <Tab
           eventKey="story"

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Product1 from "../../image/product/Product1.png";
 import QuickView from "../quickView/QuickView";
@@ -14,15 +13,7 @@ const Product = () => {
     price: "9.99$",
     image: Product1,
   };
-  const [selectedProduct, setSelectedProduct] = useState(null);
 
-  const handleProductClick = (product) => {
-    setSelectedProduct(product);
-  };
-
-  const handleCloseModal = () => {
-    setSelectedProduct(null);
-  };
   return (
     <>
       <Card style={{ width: "18rem" }} className="text-center">
@@ -47,10 +38,10 @@ const Product = () => {
           <Card.Title>{products.name}</Card.Title>
           <Card.Text>{products.price}</Card.Text>
         </Card.Body>
+        <button style={{ width: "100%" }} className=" btn  btn-outline-dark">
+          View Detail
+        </button>
       </Card>
-      <button style={{ width: "18rem" }} className=" btn  btn-outline-dark">
-        View Detail
-      </button>
     </>
   );
 };

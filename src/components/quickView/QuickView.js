@@ -1,10 +1,7 @@
-import React, { useState } from "react";
-import { Button, Modal, Form } from "react-bootstrap";
+import React from "react";
+import { Button, Modal } from "react-bootstrap";
 
 const QuickView = ({ product, show, onHide }) => {
-  const [size, setSize] = useState("Small");
-  const [quantity, setQuantity] = useState(1);
-
   return (
     <Modal
       size="xl"
