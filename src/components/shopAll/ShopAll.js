@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Product from "../product/Product";
-import Product1 from "../../image/product/Product1.png";
-import Product2 from "../../image/product/Product2.png";
+
 const ShopAll = () => {
   const [products, setProducts] = useState([]);
 
@@ -15,33 +14,7 @@ const ShopAll = () => {
 
     fetchProducts();
   }, []);
-  const items = [
-    {
-      id: 1,
-      name: "Product 1",
-      price: "9.99$",
-      image: Product1,
-    },
-    {
-      id: 2,
-      name: "Product 2",
-      price: "9.99$",
-      image: Product2,
-    },
-    {
-      id: 3,
-      name: "Product 3",
-      price: "9.99$",
-      image: Product1,
-    },
-    {
-      id: 4,
-      name: "Product 4",
-      price: "9.99$",
-      image: Product2,
-    },
-    // Add more items as needed
-  ];
+
   return (
     <>
       <div class="container text-center">

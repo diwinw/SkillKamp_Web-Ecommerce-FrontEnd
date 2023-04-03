@@ -8,6 +8,17 @@ const SignIn = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(`Email: ${email}, Password: ${password}`);
+    const data = { email, password };
+    fetch("http://localhost:8844/api/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.text())
+      .then((data) => console.log(data))
+      .catch((error) => console.error(error));
   };
 
   return (
@@ -19,7 +30,7 @@ const SignIn = () => {
             <Form.Group controlId="email">
               <Form.Label>Email address</Form.Label>
               <Form.Control
-                type="email"
+                // type="email"
                 placeholder="Enter email"
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}

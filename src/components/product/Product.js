@@ -1,20 +1,7 @@
 import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
-import Product1 from "../../image/product/Product1.png";
-import QuickView from "../quickView/QuickView";
 const Product = (props) => {
   const { name, price, image } = props;
-
-  const [isOpen, setIsOpen] = useState(false);
-  function handleClick() {
-    setIsOpen(!isOpen);
-  }
-  const products = {
-    id: 1,
-    name: "Product 1",
-    price: "9.99$",
-    image: Product1,
-  };
 
   return (
     <>
