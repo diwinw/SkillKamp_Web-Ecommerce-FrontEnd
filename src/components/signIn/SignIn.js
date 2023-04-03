@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -38,6 +39,11 @@ const SignIn = () => {
             <Button variant="primary" type="submit">
               Sign In
             </Button>
+            <Link to="/signup">
+              <Button variant="light" type="submit">
+                Sign Up
+              </Button>
+            </Link>
           </Form>
         </div>
       </div>

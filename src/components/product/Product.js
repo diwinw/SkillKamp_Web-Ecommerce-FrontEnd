@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
 import Product1 from "../../image/product/Product1.png";
 import QuickView from "../quickView/QuickView";
-const Product = () => {
+const Product = (props) => {
+  const { name, price, image } = props;
+
   const [isOpen, setIsOpen] = useState(false);
   function handleClick() {
     setIsOpen(!isOpen);
@@ -22,24 +24,27 @@ const Product = () => {
         <a href={`/products`}>
           <Card.Img
             variant="top"
-            src={products.image}
+            // src={props.image}
+            src={image}
             style={{ width: "300px", height: "300px" }}
             className="mx-auto my-3"
           />
 
           <Card.Body>
             <Card.ImgOverlay className="d-flex align-items-center ">
-              <button
+              {/* <button
                 variant="primary"
                 className="w-100 tn btn btn-light text-secondary opacity-50"
                 onClick={handleClick}
               >
                 <QuickView product={products} show={isOpen} onHide={false} />
                 Quick View
-              </button>
+              </button> */}
             </Card.ImgOverlay>
-            <Card.Title>{products.name}</Card.Title>
-            <Card.Text>{products.price}</Card.Text>
+            {/* <Card.Title>{props.name}</Card.Title> */}
+            <Card.Title>{name}</Card.Title>
+            {/* <Card.Text>{props.price}</Card.Text> */}
+            <Card.Text>{price}</Card.Text>
           </Card.Body>
         </a>
         <button style={{ width: "100%" }} className=" btn  btn-outline-dark">

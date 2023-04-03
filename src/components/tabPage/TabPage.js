@@ -6,6 +6,7 @@ import { faUser, faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import HomePage from "../homePage/HomePage";
 import StoryPage from "../storyPage/StoryPage";
 import ShopAll from "../shopAll/ShopAll";
+import SignIn from "../signIn/SignIn";
 const TabPage = () => {
   return (
     <>
@@ -40,13 +41,15 @@ const TabPage = () => {
         </Tab>
 
         <Tab
-          eventKey="cart"
+          eventKey="login"
           title={
             <span style={{ color: "black" }}>
               <FontAwesomeIcon icon={faUser} /> Login
             </span>
           }
-        ></Tab>
+        >
+          <SignIn />
+        </Tab>
         <Tab
           eventKey="cart"
           title={

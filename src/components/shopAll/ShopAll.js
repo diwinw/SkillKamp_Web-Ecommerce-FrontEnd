@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Product from "../product/Product";
 import Product1 from "../../image/product/Product1.png";
 import Product2 from "../../image/product/Product2.png";
 const ShopAll = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const response = await fetch("http://localhost:8844/api/products");
+      const data = await response.json();
+      setProducts(data);
+      console.log(products);
+    };
+
+    fetchProducts();
+  }, []);
   const items = [
     {
       id: 1,
@@ -81,8 +93,12 @@ const ShopAll = () => {
 
       <div class="container text-center">
         <div class="row">
-          {items.map((item) => (
-            <Product />
+          {products.map((product) => (
+            <Product
+              name={product.name}
+              price={product.price}
+              image={product.image}
+            />
           ))}
         </div>
       </div>
