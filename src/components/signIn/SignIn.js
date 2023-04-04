@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Cookies from "js-cookie";
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -17,8 +18,18 @@ const SignIn = () => {
       body: JSON.stringify(data),
     })
       .then((response) => response.text())
-      .then((data) => console.log(data))
-      .catch((error) => console.error(error));
+      .then((data) => {
+        // console.log(data)
+        if (data == "login fail") {
+          window.alert("User or password incorrect");
+        } else {
+          Cookies.set("token", data);
+          window.location.href = "/";
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   return (
