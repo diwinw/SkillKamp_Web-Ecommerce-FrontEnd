@@ -8,25 +8,28 @@ import StoryPage from "../storyPage/StoryPage";
 import ShopAll from "../shopAll/ShopAll";
 import SignIn from "../signIn/SignIn";
 import Cart from "../cart/Cart";
-import Cookies from "js-cookie";
+import { Link } from "react-router-dom";
 const TabPage = () => {
   const [token, setToken] = useState(null);
   const [BtUser, setBtUser] = useState(true);
 
   useEffect(() => {
-    // const cookieName = Cookies.get("token");
     const cookieName = localStorage.getItem("token");
-    // if (cookieName) {
-    //   setToken(cookieName);
-    // setBtUser(false);
-    // }
-
     if (cookieName == null) {
       setBtUser(true);
     } else {
       setBtUser(false);
     }
   }, 3000);
+
+  const handleClick = (event) => {
+    const cookieName = localStorage.getItem("token");
+    if (cookieName == null) {
+      window.location.href = "/signin";
+    } else {
+      window.location.href = "/cart";
+    }
+  };
 
   function handleLogOut() {
     // Cookies.set("token", null);
@@ -99,7 +102,9 @@ const TabPage = () => {
           eventKey="cart"
           title={
             <span style={{ color: "black" }}>
-              <FontAwesomeIcon icon={faCartShopping} /> 0
+              <Link to="/cart" onClick={handleClick}>
+                <FontAwesomeIcon icon={faCartShopping} /> 0
+              </Link>
             </span>
           }
         >
