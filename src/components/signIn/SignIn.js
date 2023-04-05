@@ -23,7 +23,8 @@ const SignIn = () => {
         if (data == "login fail") {
           window.alert("User or password incorrect");
         } else {
-          Cookies.set("token", data);
+          // Cookies.set("token", data);
+          localStorage.setItem("token", data);
           window.location.href = "/";
         }
       })

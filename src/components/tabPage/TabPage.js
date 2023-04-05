@@ -14,17 +14,25 @@ const TabPage = () => {
   const [BtUser, setBtUser] = useState(true);
 
   useEffect(() => {
-    const cookieName = Cookies.get("token");
-    if (cookieName) {
-      setToken(cookieName);
+    // const cookieName = Cookies.get("token");
+    const cookieName = localStorage.getItem("token");
+    // if (cookieName) {
+    //   setToken(cookieName);
+    // setBtUser(false);
+    // }
+
+    if (cookieName == null) {
+      setBtUser(true);
+    } else {
       setBtUser(false);
     }
-  }, []);
+  }, 3000);
 
-  function handleLogin() {
-    Cookies.set("token", null);
+  function handleLogOut() {
+    // Cookies.set("token", null);
+    localStorage.clear();
     setBtUser(true);
-    // window.location.reload();
+    window.location.href = "/";
   }
 
   return (
@@ -76,7 +84,10 @@ const TabPage = () => {
             title={
               <span style={{ color: "black" }}>
                 {/* <FontAwesomeIcon icon={faUser} />{" "} */}
-                <button className="btn btn-outline-dark " onClick={handleLogin}>
+                <button
+                  className="btn btn-outline-dark "
+                  onClick={handleLogOut}
+                >
                   LogOut
                 </button>
               </span>
