@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 
 const Cart = () => {
+  const [noDataFlag, setNodataFlag] = useState(true);
+  const [items, setItems] = useState({});
   const [cartInfos, setCartInfos] = useState([
     {
       id: 1,
       name: null,
       image: null,
-      quality: null,
+      stock: null,
       price: null,
     },
   ]);
@@ -15,6 +17,7 @@ const Cart = () => {
     const cookieName = localStorage.getItem("token");
 
     if (cookieName == null) {
+      setNodataFlag(true);
       // window.location.href = "/signin";
     } else {
       const fetchCart = async () => {
@@ -27,8 +30,18 @@ const Cart = () => {
           });
           const data = await response.text();
           // setCartInfos(data);
-          console.error(data);
+
+          if (data.length > 5) {
+            setNodataFlag(false);
+            setCartInfos(JSON.parse(data));
+            console.log(cartInfos);
+            // setItems(JSON.parse(data));
+            // console.log("cart=" + Object.keys(items));
+          } else {
+            setNodataFlag(true);
+          }
         } catch (error) {
+          setNodataFlag(true);
           console.error(error);
         }
       };
@@ -61,41 +74,55 @@ const Cart = () => {
   //   },
   // ]);
 
-  function handleQualityChange(e, id) {
-    const newProducts = cartInfos.map((cartInfo) => {
-      if (cartInfo.id === id) {
-        return { ...cartInfo, quality: Number(e.target.value) };
-      }
-      return cartInfo;
-    });
-    setCartInfos(newProducts);
-  }
+  // function handleQualityChange(e, id) {
+  //   const newProducts = cartInfos.map((cartInfo) => {
+  //     if (cartInfo.id === id) {
+  //       return { ...cartInfo, quality: Number(e.target.value) };
+  //     }
+  //     return cartInfo;
+  //   });
+  //   setCartInfos(newProducts);
+  // }
 
-  const totalSum = cartInfos.reduce((acc, cartInfo) => {
-    return acc + cartInfo.quality * cartInfo.price;
-  }, 0);
+  const total = cartInfos.reduce(
+    (accumulator, current) => accumulator + current.price * current.stock,
+    0
+  );
 
   return (
     <div>
-      <h1>Cart</h1>
-      {cartInfos.map((product) => (
-        <div key={product.id}>
-          <img src={product.image} alt={product.name} />
-          <h2>{product.name}</h2>
-          <p>
-            Quality:{" "}
-            <input
-              type="number"
-              min="1"
-              max="10"
-              value={product.quality}
-              onChange={(e) => handleQualityChange(e, product.id)}
-            />
-          </p>
-          <p>Price: ${product.price}</p>
+      {noDataFlag ? (
+        <div class="container text-center">
+          <div class="row">
+            <div class="col">
+              {/* <h1>Cart</h1> */}
+              <h2>No Product</h2>
+            </div>
+          </div>
         </div>
-      ))}
-      <p>Total: ${totalSum}</p>
+      ) : (
+        cartInfos.map((product) => (
+          <div key={product.id}>
+            <img src={product.image} alt={product.name} />
+            <h2>{product.name}</h2>
+            <p>Quality:{product.stock} </p>
+            <p>Price: ${product.price * product.stock}</p>
+            {/* <p>
+              Quality:{" "}
+              <input
+                type="number"
+                min="1"
+                max="10"
+                value={product.quality}
+                onChange={(e) => handleQualityChange(e, product.id)}
+              />
+            </p>
+            <p>Price: ${product.price}</p>
+            <p>Total: ${totalSum}</p> */}
+          </div>
+        ))
+      )}
+      <p>Total: ${total}</p>
     </div>
   );
 };

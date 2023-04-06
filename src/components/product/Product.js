@@ -1,14 +1,33 @@
 import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
 const Product = (props) => {
-  const { name, price, image } = props;
+  const { id, name, price, image } = props;
+
+  const handleClick = () => {
+    // localStorage.clear();
+    fetch("http://localhost:8844/api/products/" + id)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        localStorage.setItem("id", data.id);
+        localStorage.setItem("name", data.name);
+        localStorage.setItem("description", data.description);
+        localStorage.setItem("price", data.price);
+        localStorage.setItem("stock", data.stock);
+        localStorage.setItem("category_id", data.category_id);
+        localStorage.setItem("image", data.image);
+        // console.log(data[0]);
+        window.location.href = "/products";
+      })
+      .catch((error) => console.error(error));
+  };
 
   return (
     <>
       {/* <Link to={`/products/${products.id}`}> */}
 
       <Card style={{ width: "18rem" }} className="text-center">
-        <a href={`/products`}>
+        <a href="#" onClick={handleClick}>
           <Card.Img
             variant="top"
             // src={props.image}
@@ -34,7 +53,11 @@ const Product = (props) => {
             <Card.Text>{price}</Card.Text>
           </Card.Body>
         </a>
-        <button style={{ width: "100%" }} className=" btn  btn-outline-dark">
+        <button
+          style={{ width: "100%" }}
+          className=" btn  btn-outline-dark"
+          onClick={handleClick}
+        >
           View Detail
         </button>
       </Card>

@@ -63,12 +63,12 @@ const TabPage = () => {
         >
           <StoryPage />
         </Tab>
-        <Tab
+        {/* <Tab
           eventKey="contract"
           title={<span style={{ color: "black" }}>Contract</span>}
         >
           Contact Us
-        </Tab>
+        </Tab> */}
         {BtUser ? (
           <Tab
             eventKey="login"
