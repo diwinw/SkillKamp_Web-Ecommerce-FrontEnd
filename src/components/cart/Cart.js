@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./Cart.css";
 
 const Cart = () => {
   const [noDataFlag, setNodataFlag] = useState(true);
@@ -102,23 +103,21 @@ const Cart = () => {
         </div>
       ) : (
         cartInfos.map((product) => (
-          <div key={product.id}>
-            <img src={product.image} alt={product.name} />
-            <h2>{product.name}</h2>
-            <p>Quality:{product.stock} </p>
-            <p>Price: ${product.price * product.stock}</p>
-            {/* <p>
-              Quality:{" "}
-              <input
-                type="number"
-                min="1"
-                max="10"
-                value={product.quality}
-                onChange={(e) => handleQualityChange(e, product.id)}
-              />
-            </p>
-            <p>Price: ${product.price}</p>
-            <p>Total: ${totalSum}</p> */}
+          <div class="container text-center">
+            <div class="row">
+              <div className="cart-product" key={product.id}>
+                <img src={product.image} alt={product.name} />
+                <div>
+                  <h2>{product.name}</h2>
+                  <p className="quantity" style={{ textAlign: "left" }}>
+                    Quantity: {product.stock}
+                  </p>
+                  <p className="price" style={{ textAlign: "left" }}>
+                    Price: ${product.price * product.stock}
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         ))
       )}

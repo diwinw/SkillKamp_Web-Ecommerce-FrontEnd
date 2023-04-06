@@ -19,11 +19,11 @@ const SlideShow = () => {
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 5,
+      items: 3,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
-      items: 3,
+      items: 2,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
@@ -32,16 +32,22 @@ const SlideShow = () => {
   };
 
   return (
-    <Carousel responsive={responsive}>
-      {products.map((product) => (
-        <Product
-          id={product.id}
-          name={product.name}
-          price={product.price}
-          image={product.image}
-        />
-      ))}
-    </Carousel>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-12">
+          <Carousel responsive={responsive}>
+            {products.map((product) => (
+              <Product
+                id={product.id}
+                name={product.name}
+                price={product.price}
+                image={product.image}
+              />
+            ))}
+          </Carousel>
+        </div>
+      </div>
+    </div>
   );
 };
 export default SlideShow;

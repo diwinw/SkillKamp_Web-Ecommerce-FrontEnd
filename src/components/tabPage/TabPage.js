@@ -86,13 +86,11 @@ const TabPage = () => {
             eventKey="logout"
             title={
               <span style={{ color: "black" }}>
+                <FontAwesomeIcon icon={faUser} />
                 {/* <FontAwesomeIcon icon={faUser} />{" "} */}
-                <button
-                  className="btn btn-outline-dark "
-                  onClick={handleLogOut}
-                >
+                <a style={{ decoration: "none" }} onClick={handleLogOut}>
                   LogOut
-                </button>
+                </a>
               </span>
             }
           ></Tab>
@@ -102,9 +100,9 @@ const TabPage = () => {
           eventKey="cart"
           title={
             <span style={{ color: "black" }}>
-              <Link to="/cart" onClick={handleClick}>
-                <FontAwesomeIcon icon={faCartShopping} /> 0
-              </Link>
+              <a to="/cart" onClick={handleClick}>
+                <FontAwesomeIcon icon={faCartShopping} />
+              </a>
             </span>
           }
         >

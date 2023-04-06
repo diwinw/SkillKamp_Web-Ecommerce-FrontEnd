@@ -15,6 +15,31 @@ const ShopAll = () => {
     fetchProducts();
   }, []);
 
+  const TShirtFilter = async () => {
+    const response = await fetch(
+      "http://localhost:8844/api/products/filter/c001"
+    );
+    const data = await response.json();
+    setProducts(data);
+    console.log(products);
+  };
+
+  const BodyFilter = async () => {
+    const response = await fetch(
+      "http://localhost:8844/api/products/filter/c002"
+    );
+    const data = await response.json();
+    setProducts(data);
+    console.log(products);
+  };
+
+  const AllFilter = async () => {
+    const response = await fetch("http://localhost:8844/api/products");
+    const data = await response.json();
+    setProducts(data);
+    console.log(products);
+  };
+
   return (
     <>
       <div class="container text-center">
@@ -42,18 +67,21 @@ const ShopAll = () => {
                 <button
                   className="text-center btn btn-light"
                   style={{ width: "100%" }}
+                  onClick={AllFilter}
                 >
                   All
                 </button>
                 <button
                   className="text-center btn btn-light"
                   style={{ width: "100%" }}
+                  onClick={TShirtFilter}
                 >
                   T-shirts
                 </button>
                 <button
                   className="text-center btn btn-light"
                   style={{ width: "100%" }}
+                  onClick={BodyFilter}
                 >
                   {" "}
                   Bodysuits

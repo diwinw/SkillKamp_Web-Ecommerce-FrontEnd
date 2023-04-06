@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import SlideShow from "../slideShow/SlideShow";
-import Product1 from "../../image/product/Product1.png";
+import "./Detail.css";
+
 const Detail = () => {
   // const [product, setProduct] = useState({
   //   id: 1,
@@ -55,13 +56,16 @@ const Detail = () => {
       },
     })
       .then((response) => response.json())
-      .then((data) => console.log(data))
+      .then((data) => {
+        console.log(data);
+        window.location.href = "/cart";
+      })
       .catch((error) => console.error(error));
   };
 
   return (
     <>
-      <div class="container text-center">
+      {/* <div class="container text-center">
         <div class="row">
           <div className="product-list">
             <div key={id}>
@@ -74,7 +78,38 @@ const Detail = () => {
             </div>
           </div>
         </div>
+      </div> */}
+      <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src={image} alt={name} />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{name}</h5>
+              {description && (
+                <p class="card-text">{description.replace(/\r\n/g, "<br>")}</p>
+              )}
+              <p>Price: {price}</p>
+              <p>stock: {stock}</p>
+              <button onClick={handleClick}>Add To Cart</button>
+              <p class="card-text">
+                <small class="text-body-secondary">
+                  Last updated 3 mins ago
+                </small>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            <h4>RELATED PRODUCTS</h4>
+          </div>
+        </div>
+      </div>
+
       <SlideShow />
     </>
   );
