@@ -3,7 +3,6 @@ import Carousel from "react-bootstrap/Carousel";
 import Banner1 from "../../image/homePage/Banner1.png";
 import Banner2 from "../../image/homePage/Banner2.png";
 import Banner3 from "../../image/homePage/Banner3.png";
-// import Product from "../product/Product";
 import SlideShow from "../slideShow/SlideShow";
 const HomePage = () => {
   return (
@@ -29,18 +28,18 @@ const HomePage = () => {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-      <div class="container text-center">
-        <div class="row">
-          <div class="col">
+      <div className="container text-center">
+        <div className="row">
+          <div className="col">
             <h2>New Arrivals</h2>
           </div>
         </div>
       </div>
       <SlideShow />
-      <div class="container text-center">
-        <div class="row">
-          <div class="col">
-            {/* <button type="button" class="btn btn-dark">
+      <div className="container text-center">
+        <div className="row">
+          <div className="col">
+            {/* <button type="button" className ="btn btn-dark">
               Shop All
             </button> */}
           </div>

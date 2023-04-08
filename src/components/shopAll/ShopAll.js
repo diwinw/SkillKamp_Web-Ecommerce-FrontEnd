@@ -42,19 +42,19 @@ const ShopAll = () => {
 
   return (
     <>
-      <div class="container text-center">
-        <div class="row">
-          <div class="col">
+      <div className="container text-center">
+        <div className="row">
+          <div className="col">
             <h2>New Arrivals</h2>
           </div>
         </div>
       </div>
-      <div class="container text-center">
-        <div class="row">
-          <div class="col"></div>
-          <div class="col"></div>
-          <div class="col">
-            <div class="btn-group">
+      <div className="container text-center">
+        <div className="row">
+          <div className="col"></div>
+          <div className="col"></div>
+          <div className="col">
+            <div clclassName ass="btn-group">
               <button
                 type="button"
                 class="btn btn-dark dropdown-toggle"
@@ -63,7 +63,7 @@ const ShopAll = () => {
               >
                 Filter
               </button>
-              <ul class="dropdown-menu">
+              <ul className="dropdown-menu">
                 <button
                   className="text-center btn btn-light"
                   style={{ width: "100%" }}
@@ -92,8 +92,8 @@ const ShopAll = () => {
         </div>
       </div>
 
-      <div class="container text-center">
-        <div class="row">
+      <div className="container text-center">
+        <div className="row">
           {products.map((product) => (
             <Product
               id={product.id}

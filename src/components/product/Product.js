@@ -26,7 +26,7 @@ const Product = (props) => {
     <>
       {/* <Link to={`/products/${products.id}`}> */}
 
-      <Card style={{ width: "18rem" }} className="text-center">
+      <Card style={{ width: "17.5rem" }} className="text-center">
         <a href="#" onClick={handleClick}>
           <Card.Img
             variant="top"
@@ -37,19 +37,8 @@ const Product = (props) => {
           />
 
           <Card.Body>
-            <Card.ImgOverlay className="d-flex align-items-center ">
-              {/* <button
-                variant="primary"
-                className="w-100 tn btn btn-light text-secondary opacity-50"
-                onClick={handleClick}
-              >
-                <QuickView product={products} show={isOpen} onHide={false} />
-                Quick View
-              </button> */}
-            </Card.ImgOverlay>
-            {/* <Card.Title>{props.name}</Card.Title> */}
+            <Card.ImgOverlay className="d-flex align-items-center "></Card.ImgOverlay>
             <Card.Title>{name}</Card.Title>
-            {/* <Card.Text>{props.price}</Card.Text> */}
             <Card.Text>{price}</Card.Text>
           </Card.Body>
         </a>

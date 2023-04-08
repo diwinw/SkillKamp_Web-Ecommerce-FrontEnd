@@ -32,9 +32,9 @@ const SlideShow = () => {
   };
 
   return (
-    <div class="container text-center">
-      <div class="row">
-        <div class="col-12">
+    <div className="container text-center">
+      <div className="row">
+        <div className="col-12">
           <Carousel responsive={responsive}>
             {products.map((product) => (
               <Product

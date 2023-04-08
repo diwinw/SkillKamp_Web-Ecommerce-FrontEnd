@@ -98,7 +98,7 @@ const Cart = () => {
 
   return (
     <div>
-      <div class="container text-left">
+      <div className="container text-left">
         <div class="row">
           <a href="#" onClick={handleBack}>
             <FontAwesomeIcon icon={faBackward} />
@@ -107,22 +107,22 @@ const Cart = () => {
         </div>
       </div>
       {noDataFlag ? (
-        <div class="container text-center">
-          <div class="row">
+        <div className="container text-center">
+          <div className="row">
             <h2>No Product</h2>
           </div>
         </div>
       ) : (
         cartInfos.map((product) => (
           <div className="cart-product" key={product.id}>
-            <div class="container ">
-              <div class="row">
-                <div class="col-8">
-                  <div class="row">
-                    <div class="col-2">
+            <div className="container ">
+              <div className="row">
+                <div className="col-8">
+                  <div className="row">
+                    <div className="col-2">
                       <img src={product.image} alt={product.name} />
                     </div>
-                    <div class="col">
+                    <div className="col">
                       <h5>{product.name}</h5>
                       {/* <p className="quantity" style={{ textAlign: "left" }}>
                         Quantity: {product.stock}
@@ -135,9 +135,9 @@ const Cart = () => {
                 </div>
                 {/* <div className="col ml-auto mt-auto"> */}
 
-                {/* <div class="container">
-                  <div class="row"> */}
-                <div class="col">
+                {/* <div className ="container">
+                  <div className ="row"> */}
+                <div className="col">
                   <div className="col ml-auto mt-auto">
                     <button
                       className="btn btn-light"
@@ -175,9 +175,9 @@ const Cart = () => {
           </div>
         ))
       )}
-      <div class="container text-center">
-        <div class="row">
-          <div class="col">
+      <div className="container text-center">
+        <div className="row">
+          <div className="col">
             <h6> Order summary</h6>
             <hr />
             <h6>Subtotal : ${total}</h6>
@@ -186,7 +186,7 @@ const Cart = () => {
 
             {/* <button class="btn btn-success">Check Out</button> */}
             <button
-              class="btn btn-primary"
+              className="btn btn-primary"
               data-bs-target="#exampleModalToggle"
               data-bs-toggle="modal"
             >
@@ -197,32 +197,32 @@ const Cart = () => {
       </div>
 
       <div
-        class="modal fade"
+        className="modal fade"
         id="exampleModalToggle"
         aria-hidden="true"
         aria-labelledby="exampleModalToggleLabel"
         tabindex="-1"
       >
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalToggleLabel">
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h1 className="modal-title fs-5" id="exampleModalToggleLabel">
                 We can't accept online orders right now
               </h1>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
+            <div className="modal-body">
               Please contact us to complete your purchase.
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button
                 type="button"
-                class="btn btn-secondary"
+                className="btn btn-secondary"
                 data-bs-dismiss="modal"
               >
                 Got It

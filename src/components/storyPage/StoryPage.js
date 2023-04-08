@@ -10,9 +10,9 @@ const StoryPage = () => {
           <Carousel.Caption></Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-      <div class="container text-center">
-        <div class="row">
-          <div class="col">
+      <div className="container text-center">
+        <div className="row">
+          <div className="col">
             <h2>Our Story</h2>
             <span>
               Im a paragraph. Click here to add your own text and edit me. It’s

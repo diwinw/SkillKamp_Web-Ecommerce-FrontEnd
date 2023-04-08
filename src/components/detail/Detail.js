@@ -56,24 +56,26 @@ const Detail = () => {
         <FontAwesomeIcon icon={faBackward} />
         {" Go Back"}
       </a>
-      <div class="card mb-3">
-        <div class="row g-0">
-          <div class="col-md-4 ">
+      <div className="card mb-3">
+        <div className="row g-0">
+          <div className="col-md-4 ">
             <img src={image} alt={name} />
           </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h4 class="card-title">{name}</h4>
+          <div className="col-md-8">
+            <div className="card-body">
+              <h4 className="card-title">{name}</h4>
               {description && (
-                <p class="card-text">{description.replace(/\r\n/g, "<br>")}</p>
+                <p className="card-text">
+                  {description.replace(/\r\n/g, "<br>")}
+                </p>
               )}
               <h5 className="">Price: {price}</h5>
               <p clas="text-black-50">stock: {stock}</p>
               <button className="btn btn-warning" onClick={handleClick}>
                 Add To Cart
               </button>
-              <p class="card-text">
-                <small class="text-body-secondary">
+              <p className="card-text">
+                <small className="text-body-secondary">
                   {randomNumber} other people are viewing this product.
                 </small>
               </p>
@@ -81,9 +83,9 @@ const Detail = () => {
           </div>
         </div>
       </div>
-      <div class="container text-center">
-        <div class="row">
-          <div class="col">
+      <div className="container text-center">
+        <div className="row">
+          <div className="col">
             <h4>RELATED PRODUCTS</h4>
           </div>
         </div>
