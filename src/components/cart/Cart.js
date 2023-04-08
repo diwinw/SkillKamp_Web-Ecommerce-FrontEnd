@@ -67,11 +67,6 @@ const Cart = () => {
       });
   };
 
-  const handleBack = () => {
-    localStorage.setItem("hompage", "shop");
-    window.location.href = "/";
-  };
-
   const total = cartInfos.reduce(
     (accumulator, current) => accumulator + current.price * current.stock,
     0
@@ -100,7 +95,7 @@ const Cart = () => {
     <div>
       <div className="container text-left">
         <div class="row">
-          <a href="#" onClick={handleBack}>
+          <a href="/shop-collection">
             <FontAwesomeIcon icon={faBackward} />
             {" Go Back"}
           </a>
@@ -117,9 +112,9 @@ const Cart = () => {
           <div className="cart-product" key={product.id}>
             <div className="container ">
               <div className="row">
-                <div className="col-8">
+                <div className="col">
                   <div className="row">
-                    <div className="col-2">
+                    <div className="col">
                       <img src={product.image} alt={product.name} />
                     </div>
                     <div className="col">

@@ -18,11 +18,9 @@ const SignIn = () => {
     })
       .then((response) => response.text())
       .then((data) => {
-        // console.log(data)
         if (data == "login fail") {
           window.alert("User or password incorrect");
         } else {
-          // Cookies.set("token", data);
           localStorage.setItem("token", data);
           window.location.href = "/";
         }
@@ -34,8 +32,8 @@ const SignIn = () => {
 
   return (
     <>
-      <div class="container text-center">
-        <div class="row">
+      <div className="container text-center">
+        <div className="row">
           <Form onSubmit={handleSubmit}>
             <h2>Sign In</h2>
             <Form.Group controlId="email">

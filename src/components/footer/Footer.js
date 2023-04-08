@@ -2,6 +2,7 @@ import React from "react";
 import FacebookImg from "../../image/footer/fb.png";
 import IgImg from "../../image/footer/ig.png";
 import TKImg from "../../image/footer/tk.png";
+import "./Footer.css";
 const Footer = () => {
   return (
     <div className="footer">
@@ -19,10 +20,16 @@ const Footer = () => {
         <div className="row">
           <div className="col-md-4 text-center">
             <div className="row">
-              <span style={{ letterSpacing: "normal" }}>Home</span>
+              {/* <span style={{ letterSpacing: "normal" }}>Home</span>
               <span style={{ letterSpacing: "normal" }}>Shop Collection</span>
               <span style={{ letterSpacing: "normal" }}>Our Story</span>
-              <span style={{ letterSpacing: "normal" }}>Contact</span>
+              <span style={{ letterSpacing: "normal" }}>Contact</span> */}
+              <div className="row footer-link">
+                <a href="/"> Home </a>
+                <a href="/shop-collection"> Shop Collection </a>
+                <a href="/story"> Our Story </a>
+                <a href="/contact"> Contact </a>
+              </div>
             </div>
           </div>
           <div className="col-md-4 text-center">
@@ -31,7 +38,7 @@ const Footer = () => {
               width="30"
               height="30"
               className="d-inline-block align-top"
-              style={{ marginRight: 30 }}
+              style={{ marginRight: 20 }}
               alt="React Bootstrap logo"
             />
             <img
@@ -39,7 +46,7 @@ const Footer = () => {
               width="30"
               height="30"
               className="d-inline-block align-top"
-              style={{ marginLeft: 30 }}
+              style={{ marginLeft: 20 }}
               alt="React Bootstrap logo"
             />
             <img
@@ -47,7 +54,7 @@ const Footer = () => {
               width="30"
               height="30"
               className="d-inline-block align-top"
-              style={{ marginLeft: 30 }}
+              style={{ marginLeft: 40 }}
               alt="React Bootstrap logo"
             />
           </div>

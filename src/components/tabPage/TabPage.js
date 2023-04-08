@@ -9,15 +9,15 @@ import ShopAll from "../shopAll/ShopAll";
 import SignIn from "../signIn/SignIn";
 import Cart from "../cart/Cart";
 import { Link } from "react-router-dom";
-const TabPage = () => {
+const TabPage = (props) => {
   const [BtUser, setBtUser] = useState(true);
 
   const [activeKey, setActiveKey] = useState("home");
   useEffect(() => {
-    if (localStorage.getItem("homepage") != null) {
-      setActiveKey(localStorage.getItem("homepage"));
-      localStorage.removeItem("homepage");
-    }
+    // if (localStorage.getItem("homepage") != null) {
+    //   setActiveKey(localStorage.getItem("homepage"));
+    //   localStorage.removeItem("homepage");
+    // }
 
     const cookieName = localStorage.getItem("token");
     if (cookieName == null) {
@@ -25,6 +25,7 @@ const TabPage = () => {
     } else {
       setBtUser(false);
     }
+    setActiveKey(props.page);
   }, 3000);
 
   const handleClick = (event) => {

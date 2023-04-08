@@ -46,22 +46,26 @@ const Detail = () => {
       .catch((error) => console.error(error));
   };
 
-  const handleBack = () => {
-    // localStorage.setItem("hompage", "shop");
-    window.location.href = "/";
-  };
   return (
     <>
-      <a href="#" onClick={handleBack}>
-        <FontAwesomeIcon icon={faBackward} />
-        {" Go Back"}
-      </a>
-      <div className="card mb-3">
-        <div className="row g-0">
-          <div className="col-md-4 ">
-            <img src={image} alt={name} />
+      <div className="container ">
+        <div className="row">
+          <div className="col">
+            <a href="/shop-collection">
+              <FontAwesomeIcon icon={faBackward} />
+              {" Go Back"}
+            </a>
           </div>
-          <div className="col-md-8">
+        </div>
+      </div>
+      <div className="container ">
+        <div className="row">
+          <div className="col">
+            <div className="col-md-4  ">
+              <img src={image} alt={name} />
+            </div>
+          </div>
+          <div className="col">
             <div className="card-body">
               <h4 className="card-title">{name}</h4>
               {description && (

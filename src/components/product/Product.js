@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
+import "./Product.css";
 const Product = (props) => {
   const { id, name, price, image } = props;
 
@@ -26,14 +27,14 @@ const Product = (props) => {
     <>
       {/* <Link to={`/products/${products.id}`}> */}
 
-      <Card style={{ width: "17.5rem" }} className="text-center">
-        <a href="#" onClick={handleClick}>
+      <Card style={{ width: "17.5rem" }} className="text-center ">
+        <a href="#" onClick={handleClick} className="text-decoration-none ">
           <Card.Img
             variant="top"
             // src={props.image}
             src={image}
             style={{ width: "300px", height: "300px" }}
-            className="mx-auto my-3"
+            className="mx-auto my-3 "
           />
 
           <Card.Body>

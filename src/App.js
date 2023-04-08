@@ -21,6 +21,9 @@ function App() {
         <Route path="/signup" exact component={SignUp} />
         <Route path="/test" exact component={Test} />
         <Route path="/cart" exact component={Cart} />
+        <Route path="/shop-collection" render={() => <TabPage page="shop" />} />
+        <Route path="/story" render={() => <TabPage page="story" />} />
+        <Route path="/contact" render={() => <TabPage page="home" />} />
       </Switch>
       <Footer />
     </Router>
