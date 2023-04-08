@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from "react";
 import SlideShow from "../slideShow/SlideShow";
 import "./Detail.css";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBackward } from "@fortawesome/free-solid-svg-icons";
 const Detail = () => {
-  // const [product, setProduct] = useState({
-  //   id: 1,
-  //   name: "Product 1",
-  //   price: "9.99$",
-  //   image: Product1,
-  // });
   const [id, setId] = useState();
   const [name, setName] = useState();
   const [description, setDes] = useState();
@@ -16,9 +11,10 @@ const Detail = () => {
   const [stock, setstock] = useState();
   const [category_id, setCategory] = useState();
   const [image, setImage] = useState();
-
+  const [randomNumber, setRandomNumber] = useState(null);
   useEffect(() => {
-    // const cookieName = localStorage.getItem("product");
+    const random = Math.floor(Math.random() * 15) + 1;
+    setRandomNumber(random);
     setId(localStorage.getItem("id"));
     setName(localStorage.getItem("name"));
     setDes(localStorage.getItem("description"));
@@ -26,19 +22,6 @@ const Detail = () => {
     setstock(localStorage.getItem("stock"));
     setCategory(localStorage.getItem("category_id"));
     setImage(localStorage.getItem("image"));
-    // localStorage.getItem("name");
-    // localStorage.getItem("description");
-    // localStorage.getItem("price");
-    // localStorage.getItem("stock");
-    // localStorage.getItem("category_id");
-    // localStorage.getItem("image");
-    // if (cookieName) {
-    //   console.log(" cookieName =" + JSON.stringify(cookieName));
-    //   setProduct(cookieName);
-    //   console.log(" product =" + product);
-    // } else {
-    //   console.log("no product" + cookieName);
-    // }
   });
 
   const handleClick = () => {
@@ -63,39 +46,35 @@ const Detail = () => {
       .catch((error) => console.error(error));
   };
 
+  const handleBack = () => {
+    // localStorage.setItem("hompage", "shop");
+    window.location.href = "/";
+  };
   return (
     <>
-      {/* <div class="container text-center">
-        <div class="row">
-          <div className="product-list">
-            <div key={id}>
-              <img src={image} alt={name} />
-              <h2>{name}</h2>
-              <p>Price: {price}</p>
-              <p>stock: {stock}</p>
-              <p>{description}</p>
-              <button onClick={handleClick}>Add To Cart</button>
-            </div>
-          </div>
-        </div>
-      </div> */}
+      <a href="#" onClick={handleBack}>
+        <FontAwesomeIcon icon={faBackward} />
+        {" Go Back"}
+      </a>
       <div class="card mb-3">
         <div class="row g-0">
-          <div class="col-md-4">
+          <div class="col-md-4 ">
             <img src={image} alt={name} />
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <h5 class="card-title">{name}</h5>
+              <h4 class="card-title">{name}</h4>
               {description && (
                 <p class="card-text">{description.replace(/\r\n/g, "<br>")}</p>
               )}
-              <p>Price: {price}</p>
-              <p>stock: {stock}</p>
-              <button onClick={handleClick}>Add To Cart</button>
+              <h5 className="">Price: {price}</h5>
+              <p clas="text-black-50">stock: {stock}</p>
+              <button className="btn btn-warning" onClick={handleClick}>
+                Add To Cart
+              </button>
               <p class="card-text">
                 <small class="text-body-secondary">
-                  Last updated 3 mins ago
+                  {randomNumber} other people are viewing this product.
                 </small>
               </p>
             </div>

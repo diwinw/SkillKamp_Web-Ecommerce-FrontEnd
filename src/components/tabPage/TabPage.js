@@ -10,10 +10,15 @@ import SignIn from "../signIn/SignIn";
 import Cart from "../cart/Cart";
 import { Link } from "react-router-dom";
 const TabPage = () => {
-  const [token, setToken] = useState(null);
   const [BtUser, setBtUser] = useState(true);
 
+  const [activeKey, setActiveKey] = useState("home");
   useEffect(() => {
+    if (localStorage.getItem("homepage") != null) {
+      setActiveKey(localStorage.getItem("homepage"));
+      localStorage.removeItem("homepage");
+    }
+
     const cookieName = localStorage.getItem("token");
     if (cookieName == null) {
       setBtUser(true);
@@ -37,11 +42,15 @@ const TabPage = () => {
     setBtUser(true);
     window.location.href = "/";
   }
-
+  const handleSelect = (key) => {
+    setActiveKey(key);
+  };
   return (
     <>
       <Tabs
-        defaultActiveKey="home"
+        defaultActiveKey={activeKey}
+        activeKey={activeKey}
+        onSelect={handleSelect}
         id="uncontrolled-tab-example"
         className="mb-3  justify-content-center .text-dark"
       >
