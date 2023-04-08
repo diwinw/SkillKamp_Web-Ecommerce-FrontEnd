@@ -30,3 +30,9 @@ The application will start on http://localhost:3000.
 
 - React
 - Node.js
+
+### Run Automate test with Cypress
+
+```
+npx cypress run
+```
