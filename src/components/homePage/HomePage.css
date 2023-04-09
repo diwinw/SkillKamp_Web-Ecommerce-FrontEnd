@@ -14,6 +14,7 @@
   to {
     transform: translateY(0);
     opacity: 1;
+    transform: scale(0.5);
   }
 }
 
@@ -34,14 +35,15 @@
   to {
     transform: translateY(0);
     transform: translateX(40%);
+    transform: scale(0.6);
   }
 }
 
 .image-container-right {
   position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
+  top: 0;
+  left: 40;
+  transform: translateX(-50%);
   animation-name: slide-right;
   animation-duration: 2s;
   animation-fill-mode: forwards;
@@ -49,11 +51,12 @@
 
 @keyframes slide-right {
   from {
-    transform: translateX(-50%);
+    transform: translateY(100%);
   }
   to {
-    transform: translateX(-150%);
-    transform: translateY(-60%);
+    transform: translateY(0);
+    transform: translateX(50%);
+    transform: scale(0.6);
   }
 }
 
