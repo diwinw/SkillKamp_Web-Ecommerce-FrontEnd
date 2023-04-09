@@ -3,11 +3,12 @@ import TabPage from "./components/tabPage/TabPage";
 import Announce from "./components/announce/Announce";
 import NavbarPage from "./components/navbarPage/NavbarPage";
 import Footer from "./components/footer/Footer";
-import Detail from "./components/detail/Detail";
 import SignIn from "./components/signIn/SignIn";
 import SignUp from "./components/signIn/SignUp";
 import Test from "./components/test/test";
-import Cart from "./components/cart/Cart";
+import PaymentPage from "./components/payment/Payment";
+import ReviewPage from "./components/reviewPage/ReviewPage";
+import Chatbot from "./components/chatBot/ChatBot";
 // import Chatbot from "./components/test/ChatBot";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
@@ -22,6 +23,9 @@ function App() {
         <Route path="/signin" exact component={SignIn} />
         <Route path="/signup" exact component={SignUp} />
         <Route path="/test" exact component={Test} />
+        <Route path="/payment" exact component={PaymentPage} />
+        <Route path="/review" exact component={ReviewPage} />
+        <Route path="/chatbot" exact component={Chatbot} />
         {/* <Route path="/cart" exact component={Cart} /> */}
         <Route path="/cart" render={() => <TabPage page="cart" />} />
         {/* <Route path="/chat" exact component={Cart} /> */}

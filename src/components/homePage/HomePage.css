@@ -21,7 +21,7 @@
 .image-container-down {
   position: absolute;
   top: 0;
-  left: 50%;
+  left: 60%;
   transform: translateX(-50%);
   animation-name: slide-down;
   animation-duration: 2s;
@@ -39,7 +39,7 @@
   }
 }
 
-.image-container-right {
+/* .image-container-right {
   position: absolute;
   top: 0;
   left: 40;
@@ -58,8 +58,28 @@
     transform: translateX(50%);
     transform: scale(0.6);
   }
+} */
+
+.image-container-right {
+  position: absolute;
+  top: 0;
+  left: 5%;
+  transform: translateX(-50%);
+  animation-name: slide-right;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
 }
 
+@keyframes slide-right {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+    transform: translateX(40%);
+    transform: scale(0.6);
+  }
+}
 img {
   max-width: auto;
   height: auto;
