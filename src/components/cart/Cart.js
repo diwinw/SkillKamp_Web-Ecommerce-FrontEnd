@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./Cart.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRemove, faBackward } from "@fortawesome/free-solid-svg-icons";
-import Tab from "react-bootstrap/Tab";
-import Tabs from "react-bootstrap/Tabs";
 const Cart = () => {
   const [noDataFlag, setNodataFlag] = useState(true);
   const [cartInfos, setCartInfos] = useState([
@@ -95,35 +93,6 @@ const Cart = () => {
 
   return (
     <div>
-      <Tabs
-        id="uncontrolled-tab-example"
-        className="mb-3  justify-content-center .text-dark"
-      >
-        <Tab
-          eventKey="home"
-          title={
-            <span style={{ color: "black" }}>
-              <a href="/">Home</a>
-            </span>
-          }
-        ></Tab>
-        <Tab
-          eventKey="shop"
-          title={
-            <span style={{ color: "black" }}>
-              <a href="/shop-collection">Shop Collection</a>
-            </span>
-          }
-        ></Tab>
-        <Tab
-          eventKey="story"
-          title={
-            <span style={{ color: "black" }}>
-              <a href="/story">Our Story</a>
-            </span>
-          }
-        ></Tab>
-      </Tabs>
       <div className="container text-left">
         <div class="row">
           <a href="/shop-collection">

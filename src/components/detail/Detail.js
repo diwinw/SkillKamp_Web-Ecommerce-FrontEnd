@@ -53,7 +53,7 @@ const Detail = () => {
 
   return (
     <>
-      <Tabs
+      {/* <Tabs
         id="uncontrolled-tab-example"
         className="mb-3  justify-content-center .text-dark"
       >
@@ -94,7 +94,7 @@ const Detail = () => {
         >
           <Cart />
         </Tab>
-      </Tabs>
+      </Tabs> */}
       <div className="container ">
         <div className="row">
           <div className="col">

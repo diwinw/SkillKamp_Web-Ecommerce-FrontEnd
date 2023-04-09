@@ -17,11 +17,13 @@ function App() {
       <NavbarPage />
       <Switch>
         <Route path="/" exact component={TabPage} />
-        <Route path="/products" exact component={Detail} />
+        {/* <Route path="/products" exact component={Detail} /> */}
+        <Route path="/products" render={() => <TabPage page="detail" />} />
         <Route path="/signin" exact component={SignIn} />
         <Route path="/signup" exact component={SignUp} />
         <Route path="/test" exact component={Test} />
-        <Route path="/cart" exact component={Cart} />
+        {/* <Route path="/cart" exact component={Cart} /> */}
+        <Route path="/cart" render={() => <TabPage page="cart" />} />
         {/* <Route path="/chat" exact component={Cart} /> */}
         <Route path="/shop-collection" render={() => <TabPage page="shop" />} />
         <Route path="/story" render={() => <TabPage page="story" />} />

@@ -9,6 +9,7 @@ import ShopAll from "../shopAll/ShopAll";
 import SignIn from "../signIn/SignIn";
 import Cart from "../cart/Cart";
 import { Link } from "react-router-dom";
+import Detail from "../detail/Detail";
 const TabPage = (props) => {
   const [BtUser, setBtUser] = useState(true);
 
@@ -72,6 +73,13 @@ const TabPage = (props) => {
           title={<span style={{ color: "black" }}>Our Story</span>}
         >
           <StoryPage />
+        </Tab>
+        <Tab
+          eventKey="detail"
+          // hidden="false"
+          // title={<span style={{ color: "black" }}>Detail</span>}
+        >
+          <Detail />
         </Tab>
         {/* <Tab
           eventKey="contract"

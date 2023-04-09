@@ -1,0 +1,73 @@
+.image-container {
+  animation-name: slide-up;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.image-container-down {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-name: slide-down;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+    transform: translateX(40%);
+  }
+}
+
+.image-container-right {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  animation-name: slide-right;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slide-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(-150%);
+    transform: translateY(-60%);
+  }
+}
+
+img {
+  max-width: auto;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+img:hover {
+  transform: scale(1.2);
+}
+
+@media only screen and (max-width: 768px) {
+  img {
+    max-width: 80%;
+  }
+}

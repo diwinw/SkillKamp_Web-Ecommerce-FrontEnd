@@ -20,10 +20,6 @@ const Footer = () => {
         <div className="row">
           <div className="col-md-4 text-center">
             <div className="row">
-              {/* <span style={{ letterSpacing: "normal" }}>Home</span>
-              <span style={{ letterSpacing: "normal" }}>Shop Collection</span>
-              <span style={{ letterSpacing: "normal" }}>Our Story</span>
-              <span style={{ letterSpacing: "normal" }}>Contact</span> */}
               <div className="row footer-link">
                 <a href="/"> Home </a>
                 <a href="/shop-collection"> Shop Collection </a>
