@@ -3,11 +3,8 @@ import SlideShow from "../slideShow/SlideShow";
 import "./Detail.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBackward } from "@fortawesome/free-solid-svg-icons";
-import Tab from "react-bootstrap/Tab";
-import Tabs from "react-bootstrap/Tabs";
-import Cart from "../cart/Cart";
 import "./Detail.css";
-import { faUser, faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import ReviewPage from "../reviewPage/ReviewPage";
 const Detail = () => {
   const [id, setId] = useState();
   const [name, setName] = useState();
@@ -53,48 +50,6 @@ const Detail = () => {
 
   return (
     <>
-      {/* <Tabs
-        id="uncontrolled-tab-example"
-        className="mb-3  justify-content-center .text-dark"
-      >
-        <Tab
-          eventKey="home"
-          title={
-            <span style={{ color: "black" }}>
-              <a href="/">Home</a>
-            </span>
-          }
-        ></Tab>
-        <Tab
-          eventKey="shop"
-          title={
-            <span style={{ color: "black" }}>
-              <a href="/shop-collection">Shop Collection</a>
-            </span>
-          }
-        ></Tab>
-        <Tab
-          eventKey="story"
-          title={
-            <span style={{ color: "black" }}>
-              <a href="/story">Our Story</a>
-            </span>
-          }
-        ></Tab>
-
-        <Tab
-          eventKey="cart"
-          title={
-            <span style={{ color: "black" }}>
-              <a to="/cart" onClick={handleClick}>
-                <FontAwesomeIcon icon={faCartShopping} />
-              </a>
-            </span>
-          }
-        >
-          <Cart />
-        </Tab>
-      </Tabs> */}
       <div className="container ">
         <div className="row">
           <div className="col">
@@ -134,6 +89,17 @@ const Detail = () => {
           </div>
         </div>
       </div>
+      <br />
+      <br />
+      <div className="container text-center">
+        <div className="row">
+          <div className="col">
+            <h4>Review</h4>
+            <ReviewPage />
+          </div>
+        </div>
+      </div>
+
       <div className="container text-center">
         <div className="row">
           <div className="col">

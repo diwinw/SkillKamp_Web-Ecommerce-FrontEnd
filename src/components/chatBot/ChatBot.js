@@ -9,14 +9,6 @@ function Chatbot() {
   ]);
   const [inputValue, setInputValue] = useState("");
 
-  //   const handleSubmit = (event) => {
-  //     event.preventDefault();
-  //     const botResponse = getBotResponse(inputValue);
-  //     setMessages([...messages, { message: inputValue, sender: "user" }]);
-  //     setMessages([...messages, { message: botResponse, sender: "bot" }]);
-
-  //     setInputValue("");
-  //   };
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -72,6 +64,9 @@ function Chatbot() {
     if (words.includes("price") || words.includes("cost")) {
       return "Our dresses range in price from $50 to $500, depending on the style and designer. What is your budget?";
     }
+    if (words.includes("recommend")) {
+      return "Based on your preferences, I recommend our newest line of shoes. They're comfortable, stylish, and perfect for everyday wear!";
+    }
 
     return `You said: "${userMessage}". I'm sorry, I'm not sure I understand. Could you please rephrase your question or provide more details?`;
   }
@@ -81,7 +76,7 @@ function Chatbot() {
       <ul className="chat">
         {messages.map((message, index) => (
           <li key={index} className={message.sender === "bot" ? "bot" : "user"}>
-            <div>{message.sender === "bot" ? "Bot" : "You"}</div>
+            <div>{message.sender === "bot" ? "Customer Serivce" : "You"}</div>
             <div className="bubble">{message.message}</div>
           </li>
         ))}

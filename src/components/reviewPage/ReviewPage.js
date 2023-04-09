@@ -1,76 +1,56 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ReviewPage.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 const ReviewPage = () => {
-  const [name, setName] = useState("");
-  const [comment, setComment] = useState("");
-  const [rating, setRating] = useState(0);
-  const [reviews, setReviews] = useState([]);
+  const [reviews, setReviews] = useState([
+    {
+      id: 1,
+      title: "Great product!",
+      rating: 5,
+      comment:
+        "I absolutely love this product. It exceeded my expectations and I would definitely recommend it to anyone looking for a high-quality option.",
+    },
+    {
+      id: 2,
+      title: "Good value for the price",
+      rating: 4,
+      comment:
+        "This is a solid product for the price. It may not be the best option out there, but it gets the job done and I'm happy with my purchase.",
+    },
+    {
+      id: 3,
+      title: "Disappointing",
+      rating: 3,
+      comment:
+        "I had high hopes for this product, but it ended up falling short. It didn't work as well as I expected and I wouldn't recommend it.",
+    },
+  ]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const newReview = {
-      name: name,
-      comment: comment,
-      rating: rating,
-    };
-
-    setReviews([...reviews, newReview]);
-    setName("");
-    setComment("");
-    setRating(0);
+  //   useEffect(() => {
+  //     fetch("/api/reviews")
+  //       .then((response) => response.json())
+  //       .then((data) => setReviews(data));
+  //   }, []);
+  const renderStars = (rating) => {
+    const stars = [];
+    for (let i = 0; i < rating; i++) {
+      stars.push(<FontAwesomeIcon icon={faStar} />);
+    }
+    return stars;
   };
 
   return (
-    <div className="review-page">
-      <h1 className="review-heading">Product Reviews</h1>
-      <form className="review-form" onSubmit={handleSubmit}>
-        <label className="review-label">
-          Name
-          <input
-            className="review-input"
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </label>
-        <label className="review-label">
-          Comment
-          <textarea
-            className="review-textarea"
-            value={comment}
-            onChange={(e) => setComment(e.target.value)}
-          />
-        </label>
-        <label className="review-label">
-          Rating
-          <select
-            className="review-select"
-            value={rating}
-            onChange={(e) => setRating(e.target.value)}
-          >
-            <option value={0}>-- Select rating --</option>
-            <option value={1}>1 star</option>
-            <option value={2}>2 stars</option>
-            <option value={3}>3 stars</option>
-            <option value={4}>4 stars</option>
-            <option value={5}>5 stars</option>
-          </select>
-        </label>
-        <button className="review-button" type="submit">
-          Submit Review
-        </button>
-      </form>
-      <div className="review-list">
-        {reviews.map((review, index) => (
-          <div key={index} className="review-item">
-            <h3 className="review-item-heading">{review.name}</h3>
-            <div className="review-item-rating">{`${review.rating} stars`}</div>
-            <p className="review-item-comment">{review.comment}</p>
-          </div>
-        ))}
-      </div>
+    <div className="container-review">
+      {reviews.map((review) => (
+        <div className="review" key={review.id}>
+          <p className="title">{review.title}</p>
+          {/* <p className="rating">{review.rating}</p> */}
+          <div className="rating">{renderStars(review.rating)}</div>
+          <p className="comment">{review.comment}</p>
+        </div>
+      ))}
     </div>
   );
 };

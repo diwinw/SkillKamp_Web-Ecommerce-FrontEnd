@@ -20,6 +20,7 @@
     "react-bootstrap": "^2.7.2",
     "react-dom": "^18.2.0",
     "react-multi-carousel": "^2.8.2",
+    "react-native-picture-puzzle": "^1.0.0",
     "react-router-dom": "^5.3.4",
     "react-scripts": "5.0.1",
     "stripe": "^12.0.0",
